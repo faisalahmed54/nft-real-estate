@@ -4,11 +4,11 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "dev": "node start",
+        "dev": "npm start",
         "start": "serve -s build",
-        "build": "node build",
-        "test": "node test --env=jsdom",
-        "eject": "node eject",
+        "build": "npm build",
+        "test": "npm test --env=jsdom",
+        "eject": "npm eject",
         "heroku-postbuild": "npm run build"
     },
     "author": "Faisal",
