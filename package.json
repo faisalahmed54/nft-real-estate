@@ -7,7 +7,7 @@
         "start": "nodemon server.js",
         "devStart": "nodemon server.js"
     },
-    "author": "",
+    "author": "Faisal",
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.2",
