@@ -4,11 +4,9 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "dev": "npm start",
-        "start": "serve -s build",
-        "build": "npm build",
-        "test": "npm test --env=jsdom",
-        "eject": "npm eject",
+        "start": "nodemon server.js",
+        "dev": "nodemon server.js",
+
         "heroku-postbuild": "npm run build"
     },
     "author": "Faisal",
