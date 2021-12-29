@@ -21,17 +21,17 @@ app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is d
 // })
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-    // var connection = mysql.createConnection(config);
-    // connection.connect();
-    // connection.query('SELECT * from test.housenft', function(err, rows, fields) {
-    //     connection.end();
+    // res.sendFile(path.join(__dirname + '/index.html'));
+    var connection = mysql.createConnection(config);
+    connection.connect();
+    connection.query('SELECT * from test.housenft', function(err, rows, fields) {
+        connection.end();
 
-    //     if (err) throw err;
-    //     else {
-    //         res.status(200).send(rows);
-    //     }
-    // })
+        if (err) throw err;
+        else {
+            res.status(200).send(rows);
+        }
+    })
 });
 
 // set port, listen for requests
