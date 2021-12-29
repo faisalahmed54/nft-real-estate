@@ -8,7 +8,11 @@ var http = require('http').Server(app);
 var mysql = require('mysql');
 
 
+// parse requests of content-type - application/json
+app.use(express.json()); /* bodyParser.json() is deprecated */
 
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is deprecated */
 
 // connection.query('SELECT * from test.housenft', function(err, rows, fields) {
 //     if (err) throw err
@@ -17,22 +21,25 @@ var mysql = require('mysql');
 // })
 
 app.get('/', function(req, res) {
-    // res.sendFile(path.join(__dirname + '/index.html'));
-    var connection = mysql.createConnection(config);
-    connection.connect();
-    connection.query('SELECT * from test.housenft', function(err, rows, fields) {
-        connection.end();
+    res.sendFile(path.join(__dirname + '/index.html'));
+    // var connection = mysql.createConnection(config);
+    // connection.connect();
+    // connection.query('SELECT * from test.housenft', function(err, rows, fields) {
+    //     connection.end();
 
-        if (err) throw err;
-        else {
-            res.status(200).send(rows);
-        }
-    })
+    //     if (err) throw err;
+    //     else {
+    //         res.status(200).send(rows);
+    //     }
+    // })
 });
 
-app.listen(3000, function() {
-    console.log('Example app listen')
-})
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
+});
+
 
 app.get('/:id', async function(req, res) {
     var connection = mysql.createConnection(config);

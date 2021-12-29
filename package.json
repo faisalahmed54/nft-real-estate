@@ -2,12 +2,12 @@
     "name": "housenft",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
-        "start": "nodemon index.js",
-        "devStart": "nodemon index.js"
+        "start": "nodemon server.js",
+        "devStart": "nodemon server.js"
     },
-    "author": "",
+    "author": "Faisal",
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.2",
